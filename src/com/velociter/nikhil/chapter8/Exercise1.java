@@ -11,8 +11,10 @@ public class Exercise1 {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter the Sentence : ");
 		textOfString = input.nextLine();
-		StringTokenizer stringTokens = new StringTokenizer(textOfString,",");  
-	     while (stringTokens.hasMoreTokens()) {  
+		//Stringtokenizer breaks the string from delimeter
+		StringTokenizer stringTokens = new StringTokenizer(textOfString,","); 
+		//printing the string 
+	     while (stringTokens.hasMoreTokens()) {  //iteration for the printing 
 	         System.out.println(stringTokens.nextToken());  
 	     }  
 	}

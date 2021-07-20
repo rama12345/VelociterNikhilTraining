@@ -7,7 +7,7 @@ import java.util.Date;
 class FileListFilter implements FilenameFilter {
 	private String name;
 	private String extension;
-
+//cunstructor created
 	public FileListFilter(String name, String extension) {
 		this.name = name;
 		this.extension = extension;
@@ -29,7 +29,7 @@ class FileListFilter implements FilenameFilter {
 
 public class Exercise3 {
 	public static void main(String args[]) {
-
+//the listroots does represent a directory 
 		File[] roots = File.listRoots();
 		for(File root : roots) {
 	System.out.println(root);
@@ -39,18 +39,19 @@ public class Exercise3 {
 		FilenameFilter select = new FileListFilter("F", "java");
 
 	    File[] contents = myDir.listFiles(select);
-
+//printing a directory 
 	    if (contents != null) {
 	      System.out.println("\nThe " + contents.length
 	          + " matching items in the directory, " + myDir.getName()
 	          + ", are:");
-	      for (File file : contents) {
+	      for (File file : contents) { //iterate the content of file
 	        System.out.println(file + " is a "
 	                + (file.isDirectory() ? "directory" : "file")
 	                + " last modified on\n"
 	                + new Date(file.lastModified()));
 	      }
 	    } else {
+	    	//grtName retunr the name of the directory
 	      System.out.println(myDir.getName() + " is not a directory");
 	    }
 	    return;
