@@ -11,9 +11,9 @@ public class Exercise4 {
 
 		int[] daysInMonth = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 		String ending = " ";
-		String dayStr = null;
-		String monthStr = null;
-		String yearStr = null;
+		String dayString = null;
+		String monthString = null;
+		String yearString = null;
 		char separator = '/';
 		int day = 0;
 		int month = 0;
@@ -23,9 +23,9 @@ public class Exercise4 {
 		for (int i = 0; i < dates.length; i++) {
 			year = (int) (100.0 * Math.random());
 			month = (int) (12.0 * Math.random()) + 1;
-
+			// finding out year is leap year
 			daysIncrement = (((year % 4 == 0) && !(year % 100 == 0)) || (year % 400 == 0)) && (month == 2) ? 1 : 0;
-
+			// generate the random day 1 t0 31
 			day = (int) (Math.random() * (daysInMonth[month - 1] + daysIncrement)) + 1;
 			dates[i] = " " + day + separator + month + separator + year;
 			System.out.println("Day is " + dates[i]);
@@ -34,19 +34,35 @@ public class Exercise4 {
 		int start = 0;
 		int end = 0;
 		System.out.println();
-	for (String date1 : dates) {
+		for (String date1 : dates) { // iterated by for each
 			start = 0;
 			end = date1.indexOf(separator, start);
-			dayStr = date1.substring(start, end);
+			dayString = date1.substring(start, end);
 			start = end + 1;
-			end = date1.indexOf(separator, start);
-			monthStr = date1.substring(start, end);
+			end = date1.indexOf(separator, start); // putting separator('/') on the specific index according to date
+													// order
+			monthString = date1.substring(start, end);
 			start = end + 1;
-			yearStr = date1.substring(start);
+			yearString = date1.substring(start);
 
-			
-			if (dayStr.length() == 1)
-				switch (dayStr.charAt(0)) {
+			if (dayString.length() == 1)
+				switch (dayString.charAt(0)) {
+				case '1': // day wise assign the 1st, 2nd, 3rd 4th..etc
+					ending = "st";
+					break;
+				case '2':
+					ending = "nd";
+					break;
+				case '3':
+					ending = "rd";
+					break;
+				default:
+					ending = "th";
+				}
+			else if (dayString.charAt(0) == '1')
+				ending = "th";
+			else
+				switch (dayString.charAt(1)) {
 				case '1':
 					ending = "st";
 					break;
@@ -59,25 +75,11 @@ public class Exercise4 {
 				default:
 					ending = "th";
 				}
-			else if (dayStr.charAt(0) == '1')
-				ending = "th";
-			else
-				switch (dayStr.charAt(1)) {
-				case '1':
-					ending = "st";
-					break;
-				case '2':
-					ending = "nd";
-					break;
-				case '3':
-					ending = "d";
-					break;
-				default:
-					ending = "th";
-				}
-		
-			System.out.println(dayStr + ending + " "
-					+ monthNames[monthStr.length() == 1 ? monthStr.charAt(0) - '1' : 9 + monthStr.charAt(1) - '0'] + " "
-					+ "19" + yearStr);
-			
-		}}}
+
+			System.out.println(
+					dayString + ending + " " + monthNames[monthString.length() == 1 ? monthString.charAt(0) - '1'
+							: 9 + monthString.charAt(1) - '0'] + " " + "19" + yearString);
+
+		}
+	}
+}

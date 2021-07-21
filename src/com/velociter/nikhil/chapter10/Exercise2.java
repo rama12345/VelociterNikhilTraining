@@ -11,8 +11,8 @@ public class Exercise2 {
 				"October", "November", "December" };
 
 		String first = null;
-		String monthStr = null;
-   //taking the input form user day,month,year
+		String monthString = null;
+		// taking the input form user day,month,year
 		int day = 0, month = 0, year = 0, j;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the day:");
@@ -38,15 +38,15 @@ public class Exercise2 {
 		}
 //convert  the month number to month name 
 		for (int i = month; i < monthNames.length; i++) {
-			monthStr = monthNames[i];
+			monthString = monthNames[i];
 			break;
 
 		}
-		//creating a file
+		// creating a file
 		FileWriter fwriter = new FileWriter("Date.txt");
 
-		String date = day + first + monthStr + year;
-		//put the data into a file
+		String date = day + first + monthString + year;
+		// put the data into a file
 		for (j = 0; j < date.length(); j++) {
 			fwriter.write(date.charAt(j));
 		}

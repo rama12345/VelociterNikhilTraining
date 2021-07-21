@@ -10,21 +10,21 @@ public class Exercise1 {
 		try {
 
 			// Accept a string
-			String str = "Hand/ling /n Java /" + " FileWriter / FileReader";
-			char ch;
+			String string = "Hand/ling /n Java /" + " FileWriter / FileReader";
+			char character;
 
 			// attach a file to FileWriter
 			FileWriter fw = new FileWriter("file.txt");
 
 			// read character wise from string and write
 			// into FileWriter
-			for (int i = 0; i < str.length(); i = i++) {
-				ch = str.charAt(i);
-				if (ch == '/') {
-					//do nothing
+			for (int i = 0; i < string.length(); i = i++) {
+				character = string.charAt(i);
+				if (character == '/') {
+					// do nothing
 
 				} else {
-					fw.write(str.charAt(i));
+					fw.write(string.charAt(i));
 
 				}
 			}

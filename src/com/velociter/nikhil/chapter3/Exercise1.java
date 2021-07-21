@@ -3,7 +3,7 @@ package com.velociter.nikhil.chapter3;
 public class Exercise1 {
 	public static void main(String args[]) {
 		int myChoice = 0;
-
+     //here generated a random choice by using random method
 		myChoice = (int) (6.0 * Math.random());
 		switch (myChoice) {
 		case 0:

@@ -1,45 +1,41 @@
 package com.velociter.nikhil.chapter4;
 
 public class Exercise5 {
-	public static void main(String args[])
-	{
-        String str = "To be or not to be.";
-        String reversetext="" ;
-        char ch = ' ';
-       
-        int substr = 0;
-        int i=0, j=0, index=0;
-       
-        System.out.println("Text before reversing    :    " + str);
-       
-          for(i=0; i<str.length(); )
-        {
-       
-            index = str.indexOf(ch,substr);
-           
-            for(j=index-1; j>=substr; j--)
-            {
-                reversetext += str.charAt(j);
-                               
-            }
-           
-            if(index != -1)
-            {   
-                substr = index+1;
-                i= substr;
-                reversetext += " ";
-            }
-            else
-                break;           
-               
-        }
-   
-        for(int n=str.length()-2; n>=substr; n--)
-            reversetext += str.charAt(n);
-            
-        System.out.println("\nText after reversing    :    "+reversetext +".");
-           
+	public static void main(String args[]) {
+		String string = "To be or not to be.";
+		String reversetext = "";
+		char character = ' ';
+
+		int substring = 0;
+		int i = 0, j = 0, index = 0; // i and j for the iteration
+
+		System.out.println("Text before reversing    :    " + string);
+
+		for (i = 0; i < string.length();) {
+
+			index = string.indexOf(character, substring); // find the index until space not come
+
+			for (j = index - 1; j >= substring; j--) // here substring=0;
+			{
+				reversetext += string.charAt(j); // one word is reversed
+
+			}
+
+			if (index != -1) {
+				substring = index + 1;
+				i = substring; // increment the i value by the index
+
+				reversetext += " ";
+
+			} else
+				break;
+
+		}
+
+		for (int n = string.length() - 2; n >= substring; n--) // reverse the string
+			reversetext += string.charAt(n);
+
+		System.out.println("\nText after reversing    :    " + reversetext + ".");
 
 	}
-	}
-
+}

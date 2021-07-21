@@ -7,6 +7,7 @@ import java.util.Date;
 class FileListFilter implements FilenameFilter {
 	private String name;
 	private String extension;
+
 //cunstructor created
 	public FileListFilter(String name, String extension) {
 		this.name = name;
@@ -31,30 +32,27 @@ public class Exercise3 {
 	public static void main(String args[]) {
 //the listroots does represent a directory 
 		File[] roots = File.listRoots();
-		for(File root : roots) {
-	System.out.println(root);
-		// Create an object that is a directory
-		File myDir = new File("C:/jdk1.5.0/src/java");
-	
-		FilenameFilter select = new FileListFilter("F", "java");
+		for (File root : roots) {
+			System.out.println(root);
+			// Create an object that is a directory
+			File myDirectory = new File("C:/jdk1.5.0/src/java");
 
-	    File[] contents = myDir.listFiles(select);
+			FilenameFilter select = new FileListFilter("F", "java");
+
+			File[] contents = myDirectory.listFiles(select);
 //printing a directory 
-	    if (contents != null) {
-	      System.out.println("\nThe " + contents.length
-	          + " matching items in the directory, " + myDir.getName()
-	          + ", are:");
-	      for (File file : contents) { //iterate the content of file
-	        System.out.println(file + " is a "
-	                + (file.isDirectory() ? "directory" : "file")
-	                + " last modified on\n"
-	                + new Date(file.lastModified()));
-	      }
-	    } else {
-	    	//grtName retunr the name of the directory
-	      System.out.println(myDir.getName() + " is not a directory");
-	    }
-	    return;
-	  }
+			if (contents != null) {
+				System.out.println("\nThe " + contents.length + " matching items in the directory, "
+						+ myDirectory.getName() + ", are:");
+				for (File file : contents) { // iterate the content of file
+					System.out.println(file + " is a " + (file.isDirectory() ? "directory" : "file")
+							+ " last modified on\n" + new Date(file.lastModified()));
+				}
+			} else {
+				// grtName return the name of the directory
+				System.out.println(myDirectory.getName() + " is not a directory");
+			}
+			return;
+		}
 	}
 }
