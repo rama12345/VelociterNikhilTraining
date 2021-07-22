@@ -14,24 +14,24 @@ public class Exercise1 {
 			char character;
 
 			// attach a file to FileWriter
-			FileWriter fw = new FileWriter("file.txt");
+			FileWriter fileWriter = new FileWriter("file.txt");
 
 			// read character wise from string and write
 			// into FileWriter
-			for (int i = 0; i < string.length(); i = i++) {
+			for (int i = 0; i < string.length(); i = i++) { // i variable is used for iteration 
 				character = string.charAt(i);
 				if (character == '/') {
 					// do nothing
 
 				} else {
-					fw.write(string.charAt(i));
+					fileWriter.write(string.charAt(i));
 
 				}
 			}
 
 			System.out.println("Writing successful");
 			// close the file
-			fw.close();
+			fileWriter.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

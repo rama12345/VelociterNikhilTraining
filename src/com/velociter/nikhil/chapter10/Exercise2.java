@@ -14,13 +14,13 @@ public class Exercise2 {
 		String monthString = null;
 		// taking the input form user day,month,year
 		int day = 0, month = 0, year = 0, j;
-		Scanner sc = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter the day:");
-		day = sc.nextInt();
+		day = scanner.nextInt();
 		System.out.println("Enter the Month:");
-		month = sc.nextInt();
+		month = scanner.nextInt();
 		System.out.println("Enter the year:");
-		year = sc.nextInt();
+		year = scanner.nextInt();
 //checking the day number 
 		if (day == 1) {
 			first = "st";
@@ -37,19 +37,20 @@ public class Exercise2 {
 			first = "th";
 		}
 //convert  the month number to month name 
-		for (int i = month; i < monthNames.length; i++) {
+		for (int i = month - 1; i < monthNames.length; i++) { // i for iteration
 			monthString = monthNames[i];
 			break;
 
 		}
 		// creating a file
-		FileWriter fwriter = new FileWriter("Date.txt");
+		FileWriter filewriter = new FileWriter("Date.txt");
 
-		String date = day + first + monthString + year;
+		String date = day + first + "," + monthString + "," + year;
 		// put the data into a file
 		for (j = 0; j < date.length(); j++) {
-			fwriter.write(date.charAt(j));
+			filewriter.write(date.charAt(j));
 		}
+		filewriter.close();
 		System.out.println("Write sucessfully");
 	}
 }
