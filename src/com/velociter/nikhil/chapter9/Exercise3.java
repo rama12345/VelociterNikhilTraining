@@ -37,9 +37,9 @@ public class Exercise3 {
 			// Create an object that is a directory
 			File myDirectory = new File("C:/jdk1.5.0/src/java");
 
-			FilenameFilter select = new FileListFilter("F", "java");
+			FilenameFilter FilenameFilter = new FileListFilter("F", "java");
 
-			File[] contents = myDirectory.listFiles(select);
+			File[] contents = myDirectory.listFiles(FilenameFilter);
 //printing a directory 
 			if (contents != null) {
 				System.out.println("\nThe " + contents.length + " matching items in the directory, "
@@ -49,7 +49,7 @@ public class Exercise3 {
 							+ " last modified on\n" + new Date(file.lastModified()));
 				}
 			} else {
-				// grtName return the name of the directory
+				// getName return the name of the directory
 				System.out.println(myDirectory.getName() + " is not a directory");
 			}
 			return;
