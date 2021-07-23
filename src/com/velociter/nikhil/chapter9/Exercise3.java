@@ -37,9 +37,9 @@ public class Exercise3 {
 			// Create an object that is a directory
 			File myDirectory = new File("C:/jdk1.5.0/src/java");
 
-			FilenameFilter FilenameFilter = new FileListFilter("F", "java");
+			FilenameFilter filenameFilter = new FileListFilter("F", "java");
 
-			File[] contents = myDirectory.listFiles(FilenameFilter);
+			File[] contents = myDirectory.listFiles(filenameFilter);
 //printing a directory 
 			if (contents != null) {
 				System.out.println("\nThe " + contents.length + " matching items in the directory, "
