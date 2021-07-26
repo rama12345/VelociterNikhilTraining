@@ -1,6 +1,6 @@
 package com.velociter.nikhil.chapter6.Exercise2;
 
-public class TryPolyLine {
+public class PolyLine1 {
 	public static void main(String[] args) {
 		// Create an array of coordinate pairs
 		double[][] coords = { { 1., 1. }, { 1., 2. }, { 2., 3. }, { -3., 5. }, { -5., 1. }, { 0., 0. } };
