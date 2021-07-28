@@ -14,16 +14,16 @@ class ArithmeticExceptionExample {
 	}
 }
 
-public class Exercise4 {
+public class FinallyBlock {
 	public static void main(String args[]) {
 		// creating an object
 		ArithmeticExceptionExample iae = new ArithmeticExceptionExample();
 		try {
 			// method call
 			iae.iteratedExceptionOccures();
-		} catch (ArithmeticException e)// handle the exception
+		} catch (ArithmeticException arithmeticexceptionObj)// handle the exception
 		{
-			System.out.println("ArithmeticException Exception Occures:" + e.getMessage());
+			System.out.println("ArithmeticException Exception Occures:" + arithmeticexceptionObj.getMessage());
 		} finally// in the any situation finally block will executed
 		{
 			System.out.println("Iteration count:" + iae.iteratedCount);
