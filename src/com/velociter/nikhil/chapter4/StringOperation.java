@@ -1,6 +1,6 @@
 package com.velociter.nikhil.chapter4;
 
-public class Exercise3 {
+public class StringOperation {
 	public static void main(String args[]) {
 
 		String textOfString = "Hardships often prepare ordinary people for an extraordinary destiny", words = "",
