@@ -1,6 +1,6 @@
 package com.velociter.nikhil.chapter4;
 
-public class Exercise1 {
+public class RandomMonthAverage {
 
 	public static void main(String[] args) {
 		String months[] = { "januray", "febuary", "march", "april", "may", "june", "july", "Agust", "september",
