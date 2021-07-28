@@ -1,9 +1,9 @@
 package com.velociter.nikhil.chapter4;
 
-public class Exercise2 {
+public class Matrix {
 	public static void main(String args[]) {
-
-		int[][] table = new int[12][12];
+		int n=12;
+		int[][] table = new int[n][n];
 		int i, j;// i and j variable for iteration
 
 		for (i = 0; i <= table.length - 1; i++) {
