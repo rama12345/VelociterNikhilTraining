@@ -1,6 +1,6 @@
 package com.velociter.nikhil.chapter7;
 
-public class Exercise1 {
+public class GenerateException {
 	public static void main(String args[]) {
 		String name = null;
 	//initialize array
