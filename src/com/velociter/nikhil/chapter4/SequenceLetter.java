@@ -1,6 +1,6 @@
 package com.velociter.nikhil.chapter4;
 
-public class Exercise5 {
+public class SequenceLetter {
 	public static void main(String args[]) {
 		String string = "To be or not to be.";
 		String reversetext = "";
