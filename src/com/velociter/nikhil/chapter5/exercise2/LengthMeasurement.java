@@ -1,6 +1,6 @@
 package com.velociter.nikhil.chapter5.exercise2;
 
-public class mcmLength {
+public class LengthMeasurement {
 	  public static final int CentimiterPerMetter = 100;
 	  public static final int MillimetterPerCentimiter = 10;
 	  public static final int MillimetterPerMetter = MillimetterPerCentimiter*CentimiterPerMetter;
@@ -11,11 +11,11 @@ public class mcmLength {
 	  private int millimeters = 0;
 	 
 	  // Constructors:
-	  public mcmLength(double centimetter) {
+	  public LengthMeasurement(double centimetter) {
 	    this((int)Math.round(centimetter*MillimetterPerCentimiter));
 	  }
 	 
-	  public mcmLength(int millimetter) {
+	  public LengthMeasurement(int millimetter) {
 	    meters = millimetter/MillimetterPerCentimiter;
 	    centimeters = (millimetter - meters*MillimetterPerCentimiter)/MillimetterPerCentimiter;
 	    millimeters = millimetter - meters*MillimetterPerCentimiter - centimeters*MillimetterPerCentimiter;
@@ -26,11 +26,11 @@ public class mcmLength {
 	  // values passed as arguments are not valid.
 	  // With the approach here we guarantee all values are valid
 	  // in the object that is created.
-	  public mcmLength(int metter, int centimetter, int millimetter) {
+	  public LengthMeasurement(int metter, int centimetter, int millimetter) {
 	    this(metter*MillimetterPerCentimiter + centimetter*MillimetterPerCentimiter + millimetter);
 	  }
 	 
-	  public mcmLength(){}
+	  public LengthMeasurement(){}
 	 
 	  // Methods
 	  // Replaces the default toString method in Object:
@@ -48,48 +48,48 @@ public class mcmLength {
 	  }
 	 
 	  // All of the following methods use the toMM():
-	  public mcmLength add(mcmLength length)
+	  public LengthMeasurement add(LengthMeasurement length)
 	  {
-	    return new mcmLength(toMilliMetter()+length.toMilliMetter());
+	    return new LengthMeasurement(toMilliMetter()+length.toMilliMetter());
 	  }
 	 
-	  public mcmLength subtract(mcmLength length)
+	  public LengthMeasurement subtract(LengthMeasurement length)
 	  {
-	    return new mcmLength(toMilliMetter()-length.toMilliMetter());
+	    return new LengthMeasurement(toMilliMetter()-length.toMilliMetter());
 	  }
 	 
-	  public mcmLength multiply(int n)
+	  public LengthMeasurement multiply(int n)
 	  {
-	    return new mcmLength(n*toMilliMetter());
+	    return new LengthMeasurement(n*toMilliMetter());
 	  }
 	 
-	  public mcmLength divide(int y)
+	  public LengthMeasurement divide(int y)
 	  {
-	    return new mcmLength(toMilliMetter()/y);
+	    return new LengthMeasurement(toMilliMetter()/y);
 	  }
 	 
 	  //Calculate area in square mm
-	  public long area(mcmLength length) {
+	  public long area(LengthMeasurement length) {
 	    return (toMilliMetter()*length.toMilliMetter());
 	  }
 	 
 	  // Compare two lengths
-	  // Return value is 1 if current greater than arg
+	  // Return value is 1 if current greater than arguments
 	  //                 0 if current equal to arg
 	  //                -1 if current less than arg
-	  public int compare(mcmLength length) {
+	  public int compare(LengthMeasurement length) {
 	    return greaterThan(length) ? 1 : (equals(length) ? 0 : -1);
 	  }
 	 
-	  public boolean equals(mcmLength length) {
+	  public boolean equals(LengthMeasurement length) {
 	   return toMilliMetter() == length.toMilliMetter();
 	  }
 	 
-	  public boolean lessThan(mcmLength length) {
+	  public boolean lessThan(LengthMeasurement length) {
 	   return toMilliMetter() < length.toMilliMetter();
 	  }
 	 
-	  public boolean greaterThan(mcmLength length) {
+	  public boolean greaterThan(LengthMeasurement length) {
 	   return toMilliMetter() > length.toMilliMetter();
 	  }
 }

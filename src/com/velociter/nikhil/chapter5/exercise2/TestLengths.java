@@ -3,13 +3,13 @@ package com.velociter.nikhil.chapter5.exercise2;
 public class TestLengths {
 
 	public static void main(String args[]) {
-		mcmLength[] lengths = new mcmLength[4];
+		LengthMeasurement[] lengths = new LengthMeasurement[4];
 
 		// Test the constructors:
-		lengths[0] = new mcmLength(274.65);
-		lengths[1] = new mcmLength(274);
-		lengths[2] = new mcmLength(274, 2, 3);
-		lengths[3] = new mcmLength();
+		lengths[0] = new LengthMeasurement(274.65);
+		lengths[1] = new LengthMeasurement(274);
+		lengths[2] = new LengthMeasurement(274, 2, 3);
+		lengths[3] = new LengthMeasurement();
 
 		// Display the figures:
 		for (int i = 0; i < lengths.length; ++i) {
