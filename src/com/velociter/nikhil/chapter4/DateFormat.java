@@ -1,7 +1,7 @@
 
 package com.velociter.nikhil.chapter4;
 
-public class Exercise4 {
+public class DateFormat {
 	public static void main(String args[]) {
 		String[] dates = new String[10];
 		String date;
