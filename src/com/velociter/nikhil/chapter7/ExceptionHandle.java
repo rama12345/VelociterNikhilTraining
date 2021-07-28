@@ -11,15 +11,15 @@ class IndexOutOfBoundsException {
 	}
 }
 
-public class Exercise2 {
+public class ExceptionHandle {
 	public static void main(String args[]) {
 		// creating an object of the base class
 		IndexOutOfBoundsException object = new IndexOutOfBoundsException();
 		try {
 			object.divide(); // call the method
-		} catch (Exception e) // handle the exception
+		} catch (Exception exceptionObj) // handle the exception
 		{
-			System.out.println("Exception is:" + e.getMessage());
+			System.out.println("Exception is:" + exceptionObj.getMessage());
 		}
 	}
 
