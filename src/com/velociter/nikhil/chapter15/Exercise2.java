@@ -28,7 +28,7 @@ public class Exercise2 {
 
 			// dealers two card total and display only one dealer card
 			dillerTotal = dillerCard1 + dillerCard2;
-			System.out.println("Dealer shows: " + dillerCard1 + " ,"+dillerCard2);
+			System.out.println("Dealer shows: " + dillerCard1);
 
 			// display players first two cards & card total
 			System.out.println("First Cards: " + card1 + ", " + card2);
