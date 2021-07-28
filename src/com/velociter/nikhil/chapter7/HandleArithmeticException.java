@@ -17,16 +17,16 @@ class IteratedArithmeticException {
 	}
 }
 
-public class Exercise3 {
+public class HandleArithmeticException {
 	public static void main(String args[]) {
 		// object created
 		IteratedArithmeticException iae = new IteratedArithmeticException();
 		try {
 			// method call
 			iae.iteratedExceptionOccures();
-		} catch (ArithmeticException e) // handle the exception
+		} catch (ArithmeticException exceptionObj) // handle the exception
 		{
-			System.out.println("ArithmeticException Exception Occures:" + e.getMessage());
+			System.out.println("ArithmeticException Exception Occures:" + exceptionObj.getMessage());
 		}
 
 	}
