@@ -21,7 +21,7 @@ class Person4 implements java.io.Serializable {
 
 }
 
-class Exercise4
+class RandomAccessFile
 
 {
 	public static void main(String[] args) {
