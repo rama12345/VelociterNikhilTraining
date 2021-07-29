@@ -2,7 +2,7 @@ package com.velociter.nikhil.chapter14;
 import java.util.Scanner;
 import java.util.Vector;
 
-public class Exercise1 {
+public class PrimeNumber {
 	public static void main(String[] args) {
 		// creating and initialize a data member.
 		int startNumber, endNumber, i, j, count = 0; // i and j for the iteratoin
