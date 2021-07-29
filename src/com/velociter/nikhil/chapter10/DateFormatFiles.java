@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Exercise3 {
+public class DateFormatFiles {
 	public static void main(String args[]) throws IOException {
 		String[] monthNames = { "January", "February", "March", "April", "May", "June", "July", "August", "September",
 				"October", "November", "December" };
@@ -64,7 +64,8 @@ public class Exercise3 {
 		String secondFileDate = day + "/" + convertedmonthStringIntoMonthNumber + "/" + year;
 
 		// put the data into second file
-		for (int i = 0; i < secondFileDate.length(); i++) {
+		for (int i = 0; i < secondFileDate.length()
+				; i++) {
 			filewriterObject.write(secondFileDate.charAt(i));
 		}
 		System.out.println("Seond file date is:" + secondFileDate);
