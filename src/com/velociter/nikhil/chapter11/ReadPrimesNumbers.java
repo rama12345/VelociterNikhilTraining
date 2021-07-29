@@ -8,7 +8,7 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.Scanner;
 
-public class Exercise2 {	
+public class ReadPrimesNumbers {	
 	public static void main(String[] args) throws IOException {
 		// create object of File to store files
 		File txtPrimesFile = new File("E:/primes.txt");
