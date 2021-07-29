@@ -18,7 +18,7 @@ class Person implements Serializable {
 	}
 }
 
-public class Exercise1 {
+public class PersonDetails {
 	public static void main(String args[]) throws IOException {
 		// taking input from user
 		Scanner scannerobj = new Scanner(System.in);
