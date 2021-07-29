@@ -2,10 +2,9 @@ package com.velociter.nikhil.chapter8;
 
 import java.util.Random;
 
-public class Exercise4 {
+public class FormatRandomNumbers {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		double minimumValue = -50.0, maximumValue = +50.0;
 		Random theRandom = new Random();
 		double theRandomValue = 0.0;
@@ -18,3 +17,4 @@ public class Exercise4 {
 	}
 
 }
+
