@@ -8,7 +8,7 @@ class FileListFilter implements FilenameFilter {
 	private String name;
 	private String extension;
 
-//cunstructor created
+//constructor created
 	public FileListFilter(String name, String extension) {
 		this.name = name;
 		this.extension = extension;
@@ -28,16 +28,16 @@ class FileListFilter implements FilenameFilter {
 	}
 }
 
-public class Exercise3 {
+public class Directories {
 	public static void main(String args[]) {
 //the listroots does represent a directory 
 		File[] roots = File.listRoots();
 		for (File root : roots) {
-			System.out.println(root);
+			//System.out.println(root);
 			// Create an object that is a directory
-			File myDirectory = new File("C:/jdk1.5.0/src/java");
+			File myDirectory = new File("E:/");
 
-			FilenameFilter filenameFilter = new FileListFilter("F", "java");
+			FilenameFilter filenameFilter = new FileListFilter("E", "VelociterNikhilTraining");
 
 			File[] contents = myDirectory.listFiles(filenameFilter);
 //printing a directory 
