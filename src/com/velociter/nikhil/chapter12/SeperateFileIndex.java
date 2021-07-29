@@ -18,7 +18,7 @@ class Person3 implements java.io.Serializable {
 
 }
 
-class Eercise3 {
+class SeperateFileIndex {
 	public static void main(String[] args) {
 		try {
 			String filename = "file.txt"; // file name
