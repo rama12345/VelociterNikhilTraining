@@ -2,7 +2,7 @@ package com.velociter.nikhil.chapter8;
 
 import java.util.Random;
 
-public class Exercise3 {
+public class RandomNumberRange {
 
 	public static void main(String[] args) {
 		double minimumValue = -50.0, maximumValue = +50.0;
