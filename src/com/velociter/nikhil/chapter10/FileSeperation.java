@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Exercise1 {
+public class FileSeperation {
 	public static void main(String args[]) {
 		String dataStore;
 		try {
