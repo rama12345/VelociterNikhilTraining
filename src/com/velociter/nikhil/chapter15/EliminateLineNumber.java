@@ -1,20 +1,23 @@
 package com.velociter.nikhil.chapter15;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Exercise6 {
+public class EliminateLineNumber {
 	public static void main(String args[]) {
-		String textOfString = "My dog hasn’t got any nose.\n" + "How does your dog smell then?\n"
-				+ "My dog smells horrible.\n" + "How does your dog smell then?\n" + "My dog smells horrible.\n"
-				+ "How does your dog smell then?\n" + "My dog smells horrible.\n" + "How does your dog smell then?\n"
-				+ "My dog smells horrible.\n" + "How does your dog smell then?\n" + "My dog smells horrible.\n"
-				+ "How does your dog smell then?\n" + "My dog smells horrible.\n" + "How does your dog smell then?\n"
-				+ "My dog smells horrible.\n" + "How does your dog smell then?\n" + "My dog smells horrible.\n";
+		String textOfString = "1 My dog hasn’t got any nose.\n" + "2. How does your dog smell then?\n"
+				+ "3 My dog smells horrible.\n" + "4 How does your dog smell then?\n" + "5 My dog smells horrible.\n"
+				+ "6 How does your dog smell then?\n" + "7 My dog smells horrible.\n"
+				+ "8 How does your dog smell then?\n" + "9 My dog smells horrible.\n"
+				+ "10 How does your dog smell then?\n" + "11 My dog smells horrible.\n"
+				+ " 12 How does your dog smell then?\n" + "13 My dog smells horrible.\n"
+				+ "14 How does your dog smell then?\n" + "15 My dog smells horrible.\n"
+				+ "16 How does your dog smell then?\n" + "17 My dog smells horrible.\n";
 		String lineOfString = null;
-		int count = 0;
+//		int count = 0;
 		String fileName = "E:/regulerEx1.txt";
 		BufferedWriter bufferWriter = null;
 		BufferedReader bufferReader = null;
@@ -23,6 +26,7 @@ public class Exercise6 {
 			FileWriter fileWriter = new FileWriter(fileName);
 			// create the Object of BufferedWriter store writer file.
 			bufferWriter = new BufferedWriter(fileWriter);
+
 			fileWriter.write(textOfString);
 			System.out.println("Successfully Write to File.......\n");
 			// close the writing operation.
@@ -34,9 +38,10 @@ public class Exercise6 {
 			bufferReader = new BufferedReader(fileReader);
 			// check the condition if file get it end.
 			while ((lineOfString = bufferReader.readLine()) != null) {
-				count++;
+				lineOfString = lineOfString.replaceAll("[1234567890.]", "");
+//				count++;
 				// print data from file line by line.
-				System.out.println(count + " " + lineOfString);
+				System.out.println(lineOfString);
 			}
 			// close the reading operation.
 			bufferReader.close();
