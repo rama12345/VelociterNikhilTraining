@@ -2,7 +2,7 @@ package com.velociter.nikhil.chapter15;
 
 import java.util.Arrays;
 
-public class Exercise1 {
+public class FillArrayCharacters {
 
 	public static void main(String[] args) {
 		
