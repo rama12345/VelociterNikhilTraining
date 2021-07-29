@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 
-public class Exercise1 {
+public class ReadFiles {
 	public static void main(String[] args) {
 		// create the object of file to store
 		File txtFile = new File("E:/myFile.txt");
@@ -40,6 +40,7 @@ public class Exercise1 {
 			exception.printStackTrace(System.err);
 			System.exit(1);
 		}
+		
 		System.exit(0);
 	}
 
