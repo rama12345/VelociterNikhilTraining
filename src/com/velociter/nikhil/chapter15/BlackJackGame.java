@@ -3,7 +3,7 @@ package com.velociter.nikhil.chapter15;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Exercise2 {
+public class BlackJackGame {
 	public static void main(String[] args) {
 
 		String anotherCard, playAgain = "y";
