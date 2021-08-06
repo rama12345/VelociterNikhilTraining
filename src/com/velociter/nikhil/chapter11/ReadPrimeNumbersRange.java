@@ -11,6 +11,7 @@ import java.util.Scanner;
 
 public class ReadPrimeNumbersRange {
 	public static void main(String[] args) throws IOException {
+		
 		// create object of File to store files
 		File txtPrimesFile = new File("E:/primes.txt");
 		// read file using FileInputStream
@@ -23,6 +24,7 @@ public class ReadPrimeNumbersRange {
 			e.printStackTrace(System.err);
 			System.exit(1);
 		}
+		
 		// fetch and reading data via input file channel.
 		FileChannel inChannel = inputFile.getChannel();
 		// set initial number of Prime in primeStart.
@@ -32,6 +34,8 @@ public class ReadPrimeNumbersRange {
 		// set the high value at the end of prime.
 		int primeEnd = 30;
 		System.out.println("Prime Number Between "+primeStart+" and "+primeEnd+" : ");
+		
+		int startTime=(int) System.currentTimeMillis();
 		try {
 			// check the condition if channel of reading data is not end.
 			while (inChannel.read(byteBuffer) != -1) {
@@ -58,10 +62,14 @@ public class ReadPrimeNumbersRange {
 				// Close the file and the channel
 				inputFile.close();
 			}
+			int endTime=(int) System.currentTimeMillis();
+			System.out.println("Exceution time:"+(endTime-startTime));
+			
 		} catch (IOException e) {
 			System.out.println("Exception is : "+e.getMessage());
 			System.exit(1);
 		}
 		System.exit(0);
+
 	}
 }

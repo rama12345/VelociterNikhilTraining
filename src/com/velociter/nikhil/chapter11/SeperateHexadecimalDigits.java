@@ -5,17 +5,21 @@ import java.io.FileReader;
 public class SeperateHexadecimalDigits {
 
 	public static void main(String[] args) throws Exception {
-		// TODO Auto-generated method stub
+		
 		String lineOfString = null, wordsOfString = "", newWords;
 		char characterOfString, charactersOfArray[] = new char[50];
 		int i, lengthOfString, j;
 		String fileName = "String.txt";
 		// create an Object of StringBuffer to store hexadecimal number. 
 		StringBuffer stringBuffer = new StringBuffer();
+		
 		// create the Object of FileReader to read the data from file.
 		FileReader fileReader = new FileReader(fileName);
+		
 		// create the Object of BufferedReader store reader file.
-		BufferedReader bufferReader = new BufferedReader(fileReader);
+		BufferedReader bufferReader = new BufferedReader(
+				fileReader);
+		
 		// check the condition if file get it end.
 		while ((lineOfString = bufferReader.readLine()) != null) {
 			lengthOfString = lineOfString.length();
@@ -40,6 +44,7 @@ public class SeperateHexadecimalDigits {
 							// add the hexadecimal number to buffer.
 							stringBuffer.append(hexadecimalString);
 						}
+						
 						// convert hexadecimal number to resulting string.
 						String resultingString = stringBuffer.toString();
 						System.out.println(resultingString);

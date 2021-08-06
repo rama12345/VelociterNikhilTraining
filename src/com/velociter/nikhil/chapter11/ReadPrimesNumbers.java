@@ -10,11 +10,14 @@ import java.util.Scanner;
 
 public class ReadPrimesNumbers {	
 	public static void main(String[] args) throws IOException {
+		
+		String filePath="E:/myfile.txt";
 		// create object of File to store files
-		File txtPrimesFile = new File("E:/primes.txt");
+		File txtPrimesFile = new File("filePath");
+		
 		// read file using FileInputStream
 		FileInputStream inputFile = null;
-		// try condition if that possible.
+		
 		try {
 			// store input stream file
 			inputFile = new FileInputStream(txtPrimesFile);
@@ -24,21 +27,25 @@ public class ReadPrimesNumbers {
 		}
 		// fetch and reading data via input file channel.
 		FileChannel inChannel = inputFile.getChannel();
+		
 		// store number of Prime in PRIMECOUNT and start it.
 		Scanner input = new Scanner(System.in);
-		System.out.println("How many prime number you want to enter : ");
+		System.out.println("Enter the Prime number range between 1 to your choice: ");
 		int primeStart = 1;
+		
 		// store data into the buffer at the time 48 byte.
 		ByteBuffer byteBuffer = ByteBuffer.allocate(8 * 1024);
 		// set the hight value at the end of prime.
 		int primeEnd = input.nextInt();
 		try {
+			
 			// check the condition if channel of reding data is not end.
 			while (inChannel.read(byteBuffer) != -1) {
 				while (primeStart < primeEnd) {
 					boolean flag = false;
 					// condition if the end of PrimeCounting 
 					for (int i = 2; i <= primeStart / 2; ++i) {
+						
 						// condition for nonprime number
 						if (primeStart % i == 0) {
 							// set it flag true to get non prime and break it. 
