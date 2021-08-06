@@ -9,7 +9,7 @@ class IteratedArithmeticException {
 	public void iteratedExceptionOccures() throws ArithmeticException {
 		// doing the iteration
 		for (int iteration = 0;; iteration++) {
-			divisor = (int) (100 * Math.random());// generate the random diviser
+			divisor = (int) (100 * Math.random()); // generate the random diviser
 			result = 1000 / divisor;
 			iteratedCount++; // increment the iteration count
 			System.out.println("Iteration count:" + iteratedCount);
