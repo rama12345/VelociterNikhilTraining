@@ -1,11 +1,14 @@
-package com.velociter.nikhil.chapter16;
+package com.velociter.nikhil.chapter16.Exercise1;
+
 public class Bank {
 	// Perform a transaction
 	public void doTransaction(Transaction transaction) {
 		int balance = transaction.getAccount().getBalance(); // Get current balance
+		
 		switch (transaction.getTransactionType()) {
 		case Transaction.CREDIT:
-			// Credits require a lot of checks...
+		// Credits require a lot of checks...
+			
 			try {
 				Thread.sleep(100);
 			} catch (InterruptedException e) {
@@ -14,12 +17,14 @@ public class Bank {
 			balance += transaction.getAmount(); // Increment the balance
 			break;
 		case Transaction.DEBIT:
-			// Debits require even more checks...
+			
+		    // Debits require even more checks...
 			try {
 				Thread.sleep(150);
 			} catch (InterruptedException e) {
 				System.out.println(e);
 			}
+			
 			balance -= transaction.getAmount(); // Decrement the balance
 			break;
 		default: // We should never get here

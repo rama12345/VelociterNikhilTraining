@@ -1,4 +1,4 @@
-package com.velociter.nikhil.chapter16;
+package com.velociter.nikhil.chapter16.Exercise1;
 public class Clerk implements Runnable {
 	// Constructor
 	public Clerk(Bank theBank) {

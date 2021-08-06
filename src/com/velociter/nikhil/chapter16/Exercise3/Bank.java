@@ -2,6 +2,7 @@ package com.velociter.nikhil.chapter16.Exercise3;
 public class Bank {
 	// Perform a transaction
 	public void doTransaction(Transaction transaction) {
+		
 		switch (transaction.getTransactionType()) {
 		case Transaction.CREDIT:
 			synchronized (transaction.getAccount()) {
@@ -13,6 +14,7 @@ public class Bank {
 				} catch (InterruptedException e) {
 					System.out.println(e);
 				}
+				
 				balance += transaction.getAmount(); // Increment the balance
 				transaction.getAccount().setBalance(balance); // Restore account balance
 				break;
@@ -27,6 +29,7 @@ public class Bank {
 				} catch (InterruptedException e) {
 					System.out.println(e);
 				}
+				
 				balance -= transaction.getAmount(); // Increment the balance...
 				transaction.getAccount().setBalance(balance);// Restore account balance
 				break;

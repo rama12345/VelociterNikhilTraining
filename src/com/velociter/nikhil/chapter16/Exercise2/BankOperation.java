@@ -1,4 +1,5 @@
 package com.velociter.nikhil.chapter16.Exercise2;
+
 import java.util.Random;
 
 public class BankOperation {
@@ -7,12 +8,15 @@ public class BankOperation {
 		int[] totalCredits = new int[initialBalance.length]; // Two different cr totals
 		int[] totalDebits = new int[initialBalance.length]; // Two different db totals
 		int transactionCount = 20; // Number of debits and of credits
+
 		// Create the bank and the clerks...
 		Bank theBank = new Bank(); // Create a bank
 		Clerk clerk1 = new Clerk(theBank); // Create the first clerk
 		Clerk clerk2 = new Clerk(theBank); // Create the second clerk
 		// Create the accounts, and initialize total credits and debits
+
 		Account[] accounts = new Account[initialBalance.length];
+
 		for (int i = 0; i < initialBalance.length; i++) {
 			accounts[i] = new Account(i + 1, initialBalance[i]); // Create accounts
 			totalCredits[i] = totalDebits[i] = 0;
@@ -22,13 +26,15 @@ public class BankOperation {
 		Transaction transaction; // Stores a transaction
 		int amount = 0; // Stores an amount of money
 		int select = 0; // Selects an account
+
 		for (int i = 1; i <= transactionCount; i++) {
 			// Choose an account at random for credit operation
 			select = random.nextInt(accounts.length);
 			amount = 50 + random.nextInt(26); // Generate amount of $50 to $75
-			transaction = new Transaction(accounts[select], // Account
-					Transaction.CREDIT, // Credit transaction
-					amount); // of amount
+			transaction = new Transaction(accounts[select], Transaction.CREDIT, Transaction.CREDIT); // Account Credit
+																										// transaction
+																										// of amount
+
 			totalCredits[select] += amount; // Keep total credit tally
 			// Wait until the first clerk is free
 			while (clerk1.isBusy()) {
@@ -39,19 +45,19 @@ public class BankOperation {
 				}
 			}
 			clerk1.doTransaction(transaction); // Now do the credit
-			// choose an account at random for debit operation
-			select = random.nextInt(accounts.length);
+			select = random.nextInt(accounts.length); // choose an account at random for debit operation
+
 			amount = 30 + random.nextInt(31); // Generate amount of $30 to $60
-			transaction = new Transaction(accounts[select], // Account
-					Transaction.DEBIT, // Debit transaction
-					amount); // of amount
+			transaction = new Transaction(accounts[select], Transaction.DEBIT, amount);// Account
+			// Debit transaction
+
 			totalDebits[select] += amount; // Keep total debit tally
 			// Wait until the second clerk is free
 			while (clerk2.isBusy()) {
 				try {
 					Thread.sleep(25); // Busy so try later
 				} catch (InterruptedException e) {
-			System.out.println(e);
+					System.out.println(e);
 				}
 			}
 			clerk2.doTransaction(transaction); // Now do the debit

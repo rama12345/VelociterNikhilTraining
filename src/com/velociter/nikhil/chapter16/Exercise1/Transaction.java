@@ -1,4 +1,4 @@
-package com.velociter.nikhil.chapter16;
+package com.velociter.nikhil.chapter16.Exercise1;
 public class Transaction {
 	// Transaction types
 	public static final int DEBIT = 0;

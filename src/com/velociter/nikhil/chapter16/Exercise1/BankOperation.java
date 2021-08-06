@@ -1,4 +1,4 @@
-package com.velociter.nikhil.chapter16;
+package com.velociter.nikhil.chapter16.Exercise1;
 
 import java.util.Random;
 
@@ -8,18 +8,22 @@ public class BankOperation {
 		int totalCredits = 0; // Total credits on the account
 		int totalDebits = 0; // Total debits on the account
 		int transactionCount = 20; // Number of debits and credits
+		
 		// Create the account, the bank, and the clerks...
 		Bank theBank = new Bank(); // Create a bank
 		Clerk clerk1 = new Clerk(theBank); // Create the first clerk
 		Clerk clerk2 = new Clerk(theBank); // Create the second clerk
+		
 		Account account = new Account(1, initialBalance); // Create an account
 		// Create the threads for the clerks as daemon, and start them off
+		
 		Thread clerk1Thread = new Thread(clerk1);
 		Thread clerk2Thread = new Thread(clerk2);
 		clerk1Thread.setDaemon(true); // Set first as daemon
 		clerk2Thread.setDaemon(true); // Set second as daemon
 		clerk1Thread.start(); // Start the first
 		clerk2Thread.start();
+		
 		// Generate transactions of each type and pass to the clerks
 		Random random = new Random(); // Random number generator
 		Transaction transaction; // Stores a transaction
@@ -43,7 +47,9 @@ public class BankOperation {
 			transaction = new Transaction(account, // Account
 					Transaction.DEBIT, // Debit transaction
 					amount); // of amount
-			totalDebits += amount; // Keep total debit tally
+			totalDebits += amount; 
+			
+			// Keep total debit tally
 			// Wait until the second clerk is free
 			while (clerk2.isBusy()) {
 				try {
@@ -64,7 +70,7 @@ public class BankOperation {
 		}
 		// Now output the results
 		System.out.println("Original balance : $" + initialBalance + "\n" + "Total credits : $" + totalCredits + "\n"
-				+ "Total debits : $" + totalDebits + "\n" + "Final balance : $" + account.getBalance() + "\n"
-				+ "Should be : $" + (initialBalance + totalCredits - totalDebits));
+				                                  + "Total debits : $" + totalDebits + "\n" + "Final balance : $" + account.getBalance() + "\n"
+				                                  + "Should be : $" + (initialBalance + totalCredits - totalDebits));
 	}
 }
