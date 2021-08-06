@@ -7,12 +7,15 @@ public class StackListImpl {
 		// Creating an object of Stack class
 		// Declaring objects of Integer type
 		StackList<Integer> stackList1 = new StackList<Integer>(3);
+		
 		// Pushing elements to integer stack - stackList1
 		stackList1.push(10);
 		stackList1.push(20);
 		stackList1.push(30);
+		
 		// Print the stack elements after pushing the
 		System.out.println("stackList after pushing 10, 20 and 30 of integer :\n" + stackList1);
+		
 		// Now, pop from stack stackList1
 		stackList1.pop();
 		// Print the stack elements after poping few

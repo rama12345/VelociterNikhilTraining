@@ -10,6 +10,7 @@ public class TrySerializableStackList {
 
 	public static void main(String[] args) {
 		StackList<String> strings = new StackList<String>(10);
+		
 		// list of strings to be push to file.
 		strings.push("hello");
 		strings.push("world");
@@ -21,6 +22,7 @@ public class TrySerializableStackList {
 		strings.push("AngularJS");
 		strings.push("ReactJS");
 		strings.push("MongoDB");
+		
 		System.out.println("\nstring list contains:");
 		strings.listAll(strings); // List contents of numbers
 		// Now serialize the list to a file
@@ -41,13 +43,17 @@ public class TrySerializableStackList {
 		try {
 			// create an object of object input stream to read object from file.
 			ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(filename));
+			
 			// read the value from file.
 			values = (StackList<String>) (objectInputStream.readObject());
+			
 			// close the read operation to file.
 			objectInputStream.close();
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 			System.exit(1);
+			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 			System.exit(1);
