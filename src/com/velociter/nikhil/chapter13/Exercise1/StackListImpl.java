@@ -29,6 +29,7 @@ public class StackListImpl {
 		stackList2.push("hello");
 		stackList2.push("world");
 		stackList2.push("java");
+		
 		// Print string stack after pushing above string
 		System.out.println("\nstackList after pushing 3 elements of string :\n" + stackList2);
 	}

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 class StackList<T> {
 	// Empty array list
 	ArrayList<T> arrayList;
+	
 	// Default value of top variable when stack is empty
 	int top = -1;
 	// Variable to store size of array
