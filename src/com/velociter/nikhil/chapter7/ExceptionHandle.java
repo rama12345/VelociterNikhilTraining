@@ -4,7 +4,8 @@ class IndexOutOfBoundsException {
 
 	public void divide() {
 		String[] array = { "Rohit", "Shikar", "Virat", "Dhoni" };
-//printing the arr vlaues     
+           //printing the array values
+		
 		for (int i = 0; i <= array.length; i++) {
 			System.out.println(array[i]);
 		}
