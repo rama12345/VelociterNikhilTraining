@@ -16,8 +16,9 @@ public class EliminateLineNumber {
 				+ " 12 How does your dog smell then?\n" + "13 My dog smells horrible.\n"
 				+ "14 How does your dog smell then?\n" + "15 My dog smells horrible.\n"
 				+ "16 How does your dog smell then?\n" + "17 My dog smells horrible.\n";
+		
 		String lineOfString = null;
-//		int count = 0;
+
 		String fileName = "E:/regulerEx1.txt";
 		BufferedWriter bufferWriter = null;
 		BufferedReader bufferReader = null;
@@ -39,7 +40,6 @@ public class EliminateLineNumber {
 			// check the condition if file get it end.
 			while ((lineOfString = bufferReader.readLine()) != null) {
 				lineOfString = lineOfString.replaceAll("[1234567890.]", "");
-//				count++;
 				// print data from file line by line.
 				System.out.println(lineOfString);
 			}
