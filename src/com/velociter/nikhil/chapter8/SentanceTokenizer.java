@@ -8,8 +8,8 @@ public class SentanceTokenizer {
 	public static void main(String[] args) {
 
 		String textOfString;
-		Scanner input = new Scanner(System.in);
 		System.out.println("Enter the Sentence : ");
+		Scanner input = new Scanner(System.in);
 		// taking input from user
 		textOfString = input.nextLine();
 		
