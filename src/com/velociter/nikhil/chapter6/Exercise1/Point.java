@@ -1,4 +1,4 @@
-package com.velociter.nikhil.chapter6;
+package com.velociter.nikhil.chapter6.Exercise1;
 
 public class Point {
 	private final double x;

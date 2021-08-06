@@ -2,6 +2,7 @@ package com.velociter.nikhil.chapter6.Exercise5;
 
 public class LinkedListRunner {
 	public static void main(String[] args) {
+		
 		LinkedList list = new LinkedList();
 		list.insert(10);
 		list.insert(20);

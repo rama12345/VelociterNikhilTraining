@@ -1,4 +1,4 @@
-package com.velociter.nikhil.chapter6;
+package com.velociter.nikhil.chapter6.Exercise1;
 
 public class Rectangle extends Shape {
 	int weight, height, length;

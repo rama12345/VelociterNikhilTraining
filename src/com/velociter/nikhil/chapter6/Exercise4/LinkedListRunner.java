@@ -6,10 +6,12 @@ public class LinkedListRunner {
 	public static void main(String[] args) {
 		LinkedList list = new LinkedList();
 		Scanner scanner = new Scanner(System.in);
+		
 		System.out.println("Enter the size of linklist");
 		int size = scanner.nextInt();
 		System.out.println("Enter the integer data in linklist");
 		int a1 = scanner.nextInt();
+		
 		Node head = new Node(a1);
 		list.addToTheLast(head);// add head to linkedlist
 		for (int i = 1; i < size; i++) { // add remaining nodes
