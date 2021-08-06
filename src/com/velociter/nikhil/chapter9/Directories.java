@@ -6,53 +6,53 @@ import java.util.Date;
 
 class FileListFilter implements FilenameFilter {
 	private String name;
-	private String extension;
+	private String directroy;
 
 //constructor created
-	public FileListFilter(String name, String extension) {
+	public FileListFilter(String name, String directroy) {
 		this.name = name;
-		this.extension = extension;
+		this.directroy = directroy;
 	}
 
-	public boolean accept(File directory, String filename) {
-		boolean fileOK = true;
-
-		if (name != null) {
-			fileOK &= filename.startsWith(name);
+	@Override
+	public boolean accept(File dir, String filename) {
+		boolean fileOk = false;
+		if (name != null || directroy != null) {
+			fileOk = filename.startsWith(name);
+			fileOk = filename.endsWith('.' + directroy);
+			return fileOk = true;
 		}
-
-		if (extension != null) {
-			fileOK &= filename.endsWith('.' + extension);
-		}
-		return fileOK;
+		return fileOk;
 	}
+
 }
 
 public class Directories {
 	public static void main(String args[]) {
-//the listroots does represent a directory 
+		// the list roots does represent a root directory
 		File[] roots = File.listRoots();
 		for (File root : roots) {
-			//System.out.println(root);
+			System.out.println("The Root is:" + root);
 			// Create an object that is a directory
-			File myDirectory = new File("E:/");
-
-			FilenameFilter filenameFilter = new FileListFilter("E", "VelociterNikhilTraining");
+			
+			File myDirectory = new File("E:\\VelociterNikhilTraining\\src\\com\\velociter\\nikhil");
+			FilenameFilter filenameFilter = new FileListFilter("E:/",
+					"E:\\VelociterNikhilTraining\\src\\com\\velociter\\nikhil");
 
 			File[] contents = myDirectory.listFiles(filenameFilter);
-//printing a directory 
+			// printing a directory
 			if (contents != null) {
 				System.out.println("\nThe " + contents.length + " matching items in the directory, "
-						+ myDirectory.getName() + ", are:");
-				for (File file : contents) { // iterate the content of file
+						                    + myDirectory.getName() + ", are:");
+				for (File file : contents) {             // iterate the content of file
 					System.out.println(file + " is a " + (file.isDirectory() ? "directory" : "file")
-							+ " last modified on\n" + new Date(file.lastModified()));
+							                + " last modified on\n" + new Date(file.lastModified()));
 				}
+
 			} else {
 				// getName return the name of the directory
 				System.out.println(myDirectory.getName() + " is not a directory");
 			}
-			return;
 		}
 	}
 }
