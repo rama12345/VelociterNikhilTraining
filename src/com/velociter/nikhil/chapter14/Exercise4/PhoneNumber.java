@@ -4,15 +4,16 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Serializable;
+import java.util.Scanner;
 
 class PhoneNumber implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private String areacode;
-	private String number;
+	private String[] areacode = new String[20];
+	private String[] number = new String[20];
 
 	// constructor with parameter
-	public PhoneNumber(String areacode, String number) {
+	public PhoneNumber(String[] areacode, String[] number) {
 		this.areacode = areacode;
 		this.number = number;
 	}
@@ -23,21 +24,20 @@ class PhoneNumber implements Serializable {
 
 	// Read a phone number from the keyboard
 	public static PhoneNumber readNumber() {
-		String area = null; // Stores the area code
-		String localcode = null; // Stores the local code
-		try {
-			// get the area code and local code, number name from user.
-			System.out.print("Enter area code: ");
-			area = keyboard.readLine().trim();
-			System.out.print("Enter local code: ");
-			localcode = keyboard.readLine().trim();
-			System.out.print("Enter the number: ");
-			localcode += " " + keyboard.readLine().trim();
-		} catch (IOException e) {
-			System.err.println("Error reading a phone number.");
-			e.printStackTrace();
-			System.exit(1);
-		}
+		
+		String[] area = new String[20]; // Stores the area code
+		String[] localcode = new String[20]; // Stores the local code
+		Scanner input = new Scanner(System.in);
+
+		// get the area code and local code, number name from user.
+		System.out.print("Enter area code: ");
+		for (int i = 0; i < area.length; i++)
+			area[i] = input.nextLine();
+		System.out.print("Enter local code: ");
+		for(int i=0;i< localcode.length;i++)
+			localcode[i] = input.nextLine();
+		System.out.print("Enter the number: ");
+//		localcode=keyboard.readLine().trim();
 		return new PhoneNumber(area, localcode);
 	}
 

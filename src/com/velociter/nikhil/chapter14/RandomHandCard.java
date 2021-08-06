@@ -21,22 +21,20 @@ public class RandomHandCard {
 				deck.add(cardValue + suit);
 			}
 		}
-
 		// Select cards at random from the deck to transfer to shuffled deck
 		int selection = 0; // Selected card index
 		for (int i = 0; i < cardsInDeck; ++i) {
-
+			
 			selection = chooser.nextInt(deck.size());
-
+			
 			shuffledDeck.add(deck.remove(selection));
 
 		}
-
 		// Deal the cards from the shuffled deck into four hands
 		StringBuffer[] hands = { new StringBuffer("Hand 1:"), new StringBuffer("Hand 2:"), new StringBuffer("Hand 3:"),
 				new StringBuffer("Hand 4:") };
+		
 		ListIterator<String> cards = shuffledDeck.listIterator();
-
 		while (cards.hasNext()) {
 			for (StringBuffer hand : hands) {
 				hand.append(' ').append(cards.next());

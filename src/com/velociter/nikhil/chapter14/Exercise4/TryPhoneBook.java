@@ -29,9 +29,9 @@ public class TryPhoneBook {
 				someone = Person.readPerson();
 				BookEntry entry = phoneBook.getEntry(someone);
 				if (entry == null) {
-					System.out.println("The number for " + someone + " was not found. ");
+					System.out.println("The number for " + someone + " was not found. \n");
 				} else {
-					System.out.println("The number for " + someone + " is " + entry.getNumber());
+					System.out.println("The number for " + someone + " is " + entry.getNumber()+"\n");
 				}
 				break;
 			case 9:
