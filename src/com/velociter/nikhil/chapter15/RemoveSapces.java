@@ -23,6 +23,7 @@ public class RemoveSapces {
 			System.out.println("Successfully Write to File.......\n");
 			// close the writing operation.
 			bufferWriter.close();
+			
 			System.out.println("----------------Resulting String from File-----------");
 			// create the Object of FileReader to read the data from file.
 			FileReader fileReader = new FileReader(fileName);
