@@ -9,6 +9,7 @@ public class RandomNumberRange {
 		// generate the random number
 		Random theRandom = new Random();
 		double theRandomValue = 0.0;
+
 		for (int i = 1; i <= 20; i++) {
 			// check the generate random number range -50 to 50
 			if (Double.valueOf(maximumValue - minimumValue).isInfinite() == false)

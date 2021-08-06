@@ -15,10 +15,11 @@ public class DelimeterSeperation {
 		System.out.println("Enter the Sentence : ");
 		string = sc.nextLine();
 		string = string + " ";
+
 		// finding a string length from string function
 		length = string.length();
 		for (i = 0; i < length; i++) {
-			// fiding a one by one character from string using charAt()
+			// finding a one by one character from string using charAt()
 			character = string.charAt(i);
 			if (character != ' ') {
 				// adding a character in word

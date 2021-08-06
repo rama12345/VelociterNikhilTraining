@@ -8,6 +8,7 @@ public class FormatRandomNumbers {
 		double minimumValue = -50.0, maximumValue = +50.0;
 		Random theRandom = new Random();
 		double theRandomValue = 0.0;
+
 		for (int i = 1; i <= 20; i++) {
 			// Checking for a valid range-
 			if (Double.valueOf(maximumValue - minimumValue).isInfinite() == false)
@@ -17,4 +18,3 @@ public class FormatRandomNumbers {
 	}
 
 }
-
