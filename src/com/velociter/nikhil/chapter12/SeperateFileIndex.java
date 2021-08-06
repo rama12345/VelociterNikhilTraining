@@ -25,12 +25,12 @@ class SeperateFileIndex {
 			FileOutputStream file = new FileOutputStream(filename);
 			ObjectOutputStream outputStreamObj = new ObjectOutputStream(file); // creating a file
 
-			Scanner scanner = new Scanner(System.in); // taking a input from user
 			System.out.println("Enter the input size for input :");
+			Scanner scanner = new Scanner(System.in); // taking a input from user
 			int inputSize = scanner.nextInt();
-
 			String name[] = new String[inputSize];
 			int index[] = new int[inputSize];
+		
 			for (int i = 0; i < inputSize; i++) {
 
 				System.out.println("Enter the index");
@@ -48,9 +48,10 @@ class SeperateFileIndex {
 			file.close();
 			outputStreamObj.close(); // closing the file
 			System.out.println("Written SuccessFully");
-		} catch (IOException exceptoinObj) {
+			
+		}catch (IOException exceptoinObj) {
 			System.out.println("IOException is caught");
-
 		}
 	}
 }
+
