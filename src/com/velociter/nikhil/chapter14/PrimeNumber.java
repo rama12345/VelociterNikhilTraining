@@ -6,6 +6,7 @@ public class PrimeNumber {
 	public static void main(String[] args) {
 		// creating and initialize a data member.
 		int startNumber, endNumber, i, j, count = 0; // i and j for the iteration
+		
 		// creating an object of vector to store prime number.
 		Vector<Integer> vectorobj = new Vector<Integer>();
 		
@@ -41,6 +42,7 @@ public class PrimeNumber {
 				vectorobj.add(i);
 			}
 		}
+		
 		System.out.print(vectorobj + " ");
 		double endTime=(double) System.currentTimeMillis()/1000;
 		System.out.println("After Exceution:"+endTime);		
