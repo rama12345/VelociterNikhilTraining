@@ -8,7 +8,7 @@ public class PrintNumberWithoutSqRoot {
 		Scanner scan = new Scanner(System.in);
 
 		System.out.print("How Many Prime Number from Start to End You Want.\n");
-
+        //take input from user
 		System.out.print("Enter Starting Number : ");
 		start = scan.nextInt();
 		System.out.print("Enter Ending Number : ");
@@ -17,14 +17,17 @@ public class PrintNumberWithoutSqRoot {
 		System.out.print("Prime Numbers Between " + start + " and " + end + " is :\n");
 		long startTime = System.currentTimeMillis();
 		System.out.println("Before Execution in Second : " + startTime);
+		
 		for (i = start; i <= end; i++) {
-			count = 0;
+		    	count = 0;
+       			//checking no. is prime or not
 			for (j = 2; j < i; j++) {
 				if (i % j == 0) {
 					count++;
 					break;
 				}
 			}
+			//condition for prime
 			if (count == 0) {
 				System.out.print(i + " ");
 			}
