@@ -123,6 +123,5 @@ public class DateFormatFiles {
 		System.out.println("Seond file date is:" + secondFileDate);
 		System.out.println("Written  in the second file succesfully");
 		filewriterObject.close();
-
 	}
 }

@@ -31,7 +31,7 @@ public class MatchDuplicateWordFile {
 					// adding a character in word
 					word = word + character;
 				} else {
-					// add the word into array of string and count it.
+					// add the word into the array of string and count it.
 					arrayOfString[numberOfWords] = word;
 					numberOfWords++;
 					// set as empty word

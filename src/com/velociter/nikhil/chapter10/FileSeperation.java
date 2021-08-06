@@ -38,7 +38,8 @@ public class FileSeperation {
 				e.printStackTrace();
 			}
 		} else {
-			System.out.println("Please Enter Valid Sentence.");
+			
+			System.out.println("Please Enter Valid Sentence");
 		}
 	}
 }
