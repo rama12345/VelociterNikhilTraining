@@ -5,35 +5,40 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class FileSeperation {
-	public static void main(String args[]) {
-		String dataStore;
-		try {
+	public static void main(String args[]) throws IOException {
+		// Accept a string
+		// String textOfstring = "Hand/ling /n Java /" + " FileWriter / FileReader";
+		String textOfString;
 
-			// Accept a string
-			String string = "Hand/ling /n Java /" + " FileWriter / FileReader";
-			char character;
+		// take input from user.
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter a Sentence with Delimitter : ");
 
-			// attach a file to FileWriter
-			FileWriter fileWriter = new FileWriter("file.txt");
+		// check the validation of input.
+		if (input.hasNext("[A-Za-z/]*")) {
+			textOfString = input.nextLine();
 
-			// read character wise from string and write
-			// into FileWriter
-			for (int i = 0; i < string.length(); i = i++) { // i variable is used for iteration 
-				character = string.charAt(i);
-				if (character == '/') {
-					// do nothing
+			// Split method matches the given delimiter and split the string based on it.
+			String[] output = textOfString.split("/");
 
-				} else {
-					fileWriter.write(string.charAt(i));
+			String filePath = "E:/myFile2.txt";
+			try {
+				FileWriter fileWriter = new FileWriter(filePath);
 
+				// apply for each loop for iteration.
+				for (String splitString : output) {
+					System.out.println(splitString);
+
+					// write word of string to file.
+					fileWriter.write(splitString + "\n");
 				}
+				System.out.println("Writing successful....");
+				fileWriter.close();
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
-
-			System.out.println("Writing successful");
-			// close the file
-			fileWriter.close();
-		} catch (IOException e) {
-			e.printStackTrace();
+		} else {
+			System.out.println("Please Enter Valid Sentence.");
 		}
 	}
 }

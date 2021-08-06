@@ -2,10 +2,10 @@ package com.velociter.nikhil.chapter10;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class FileDateFormat {
+public class Example {
+
 	public static void main(String args[]) throws IOException {
 		try {
 			takeInputFromUser();

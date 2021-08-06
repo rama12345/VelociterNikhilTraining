@@ -11,7 +11,7 @@ public class AvoidFileOverWriting {
 			File textFile = new File(args[0]);
 			// variable declared
 			FileOutputStream outputFile = null;
-			// cheking file exist or not
+			// checking file exist or not
 			if (textFile.isFile()) {
 				System.out.println("file.txt already exists.");
 			} else {
