@@ -52,12 +52,12 @@ public class BlackJackGame {
 
 				if (cardTotal < 21) // if player card total smaller than 21
 
-					System.out.println("Another Card (y/n)?: ");
+				System.out.println("Another Card (y/n)?: ");
 				anotherCard = keyboard.nextLine();
 				if ("n".equals(anotherCard))
 					System.out.println("Dealer had: " + dillerTotal);
 				System.out.println("You had: " + cardTotal);
-				
+
 				while ("n".equals(anotherCard)) {
 					if (dillerTotal < cardTotal && cardTotal < 21) // the condition for players wins
 					{
