@@ -7,6 +7,7 @@ import java.util.ListIterator;
 
 public class RandomHandCard {
 	public static void main(String[] args) {
+		
 		String[] suits = { "C", "D", "H", "S" };
 		String[] cardValues = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
 
@@ -40,7 +41,6 @@ public class RandomHandCard {
 				hand.append(' ').append(cards.next());
 			}
 		}
-
 		// Display the hands
 		for (StringBuffer hand : hands) {
 			System.out.println(hand);
