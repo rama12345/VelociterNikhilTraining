@@ -8,7 +8,9 @@ import java.util.Scanner;
 public class FileDateFormat {
 	public static void main(String args[]) throws IOException {
 		try {
+			
 			takeInputFromUser();
+			
 		} catch (Exception e) {
 			System.out.println("you Enterd wrong input..");
 			takeInputFromUser();
