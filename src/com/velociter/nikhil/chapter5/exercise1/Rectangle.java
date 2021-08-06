@@ -4,6 +4,7 @@ public class Rectangle {
 	private Point topLeft;
 	private Point bottomRight;
 
+	
 	// Constructors
 	public Rectangle(double x1, double y1, double x2, double y2) {
 		// Ensure topleft uses the smaller of x1,x2 and y1,y2

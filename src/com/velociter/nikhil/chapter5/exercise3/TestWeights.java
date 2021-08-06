@@ -18,12 +18,10 @@ public class TestWeights {
 
 		// Test the arithmetic and area operations
 		System.out.println("Addition: " + lengths[0] + " plus " + lengths[1] + " is " + lengths[0].add(lengths[1]));
-		System.out.println(
-				"Subtraction: " + lengths[0] + " minus " + lengths[1] + " is " + lengths[0].subtract(lengths[1]));
+		System.out.println("Subtraction: " + lengths[0] + " minus " + lengths[1] + " is " + lengths[0].subtract(lengths[1]));
 		System.out.println("Multiplication: " + lengths[0] + " times 10 is " + lengths[0].multiply(10));
 		System.out.println("Division: " + lengths[0] + " divided by 10 is " + lengths[0].divide(10));
-		System.out.println(
-				"Area: " + lengths[0] + " by " + lengths[1] + " is " + lengths[0].area(lengths[1]) + " square gm");
+		System.out.println("Area: " + lengths[0] + " by " + lengths[1] + " is " + lengths[0].area(lengths[1]) + " square gm");
 
 		// Test comparison methods
 		if (lengths[0].greaterThan(lengths[1])) {
