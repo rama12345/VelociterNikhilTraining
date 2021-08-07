@@ -1,50 +1,49 @@
 package com.velociter.nikhil.chapter14.Exercise4;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Serializable;
-import java.util.Scanner;
+public class Person {
+	
+	// data member of person.
+	static int id = PhoneBook.people.size();
+	private String name;
+	private String surname;
+	private String phoneNumber;
+	private String email;
+	private String address;
 
-public class Person implements Comparable<Person>, Serializable {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private String[] firstName = new String[20];
-	private String[] surname = new String[20];
-
-	// constructor with parameter
-	public Person(String[] firstName, String[] surname) {
-		this.firstName = firstName;
+	// constructor with arguments.
+	Person(String name, String surname, String phoneNumber, String email, String address) {
+		this.name = name;
 		this.surname = surname;
+		this.phoneNumber = phoneNumber;
+		this.email = email;
+		this.address = address;
+		id++;
 	}
 
-	// Read a person from the keyboard
-	public static Person readPerson() {
-		String[] firstName = new String[20];
-		String[] surname = new String[20];
-		Scanner input = new Scanner(System.in);
-		System.out.println("Enter first name : ");
-		for (int i = 0; i < firstName.length; i++)
-			firstName[i] = input.nextLine();
-		System.out.println("Enter surname : ");
-		for (int i = 0; i < surname.length; i++)
-			surname[i] = input.nextLine();
-		return new Person(firstName, surname);
+	// create getters. 
+	String getName() {
+		return name;
 	}
 
-	// Compare Person objects
-	public int compareTo(Person person) {
-		int result = surname.length;
-		return result == 0 ? firstName.length : result;
+	String getSurname() {
+		return surname;
 	}
 
+	String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	String getEmail() {
+		return email;
+	}
+
+	String getAddress() {
+		return address;
+	}
+
+	@Override
 	public String toString() {
-		return firstName + " " + surname;
+		return "\n\nName: " + getName() + "\nSurname: " + getSurname() + "\nPhone number: " + getPhoneNumber()
+				+ "\nEmail: " + getEmail() + "\nAddress: " + getAddress();
 	}
-
-	// store user input to buffer.
-	private static BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
 }
