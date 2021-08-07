@@ -27,6 +27,7 @@ public class Person implements Serializable {
 			System.out.println("Enter the Name:");
 			String name=scannerObj.nextLine();
 			list1.add(name);
+			
 			scannerObj.nextLine();
 			System.out.println("Enter the Address:");
 			String address=scannerObj.nextLine();
@@ -38,6 +39,7 @@ public class Person implements Serializable {
 		concatenated_list.addAll(list1);
 		concatenated_list.addAll(list2);
 		System.out.println("Name : " + list1 + " Address : " + list2);
+		
 	}
 
 	// display the name and address from user.
